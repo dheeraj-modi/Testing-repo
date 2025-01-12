@@ -1,0 +1,1123 @@
+JavaScript is a scripting la
+
+
+=========================================================================================================================
+
+** Naming convention: JavaScript **
+
+1. relatable ---- age = 45
+2. starts with lower/upper , _
+3. never start : number/special character
+4. single word
+5. in case multiple words ----> use seperators/patterns like:
+ 1: camelCasePattern = childAge = 12;
+ 2: snake_case_pattern = parent_age = 45
+ 3: PascalCasePattern = GrandParentAge = 80
+ 4: kebab-case-pattern = grand-parent-age=45 (not allowed)
+
+===========================================================================================================================
+
+
+** Operators **
+
+1. Arithmetic operator ---> + - * % / **(power)
+2. Assignment/Shorthand ----> += -= *= /= **= %=
+3. Increment/Decrement  ----->  ++ --  (post/pre)
+
+ ex- let a = 45;
+     let b = 10;
+     let res = ++a + --b + a-- - b++ + a + --a - b-- + a++ - ++b;
+     console.log(res)
+     console.log(a)
+     console.log(b)
+
+4. Comparison operator ------>  == != === > >= < <= (hamesa true ya to false dega)
+  == only value check
+  === both check type and value (type equality check operator)
+  (when we compare two rings, only the first (non- equal) characters are compared and according to their ascii, the result is displayed.
+   ex- let a = "hello";
+       let b = "world";
+       console.log(a>b); //false as h>w XXXX
+
+5. Logical operator ---->  && || ! 
+
+ falsy values : false, null, 0, undefined, '', NaN
+
+ let a = 2;
+let b = 3;
+let c = null;
+
+console.log(a && b && c); // null ---last one false to null dega 
+
+console.log(a || b || c); // 2 ---ffirst time hi true ho jayega  
+
+
+==========================================================================================================================
+
+
+** Conditional Statement (control flow)
+
+1. Simple if 
+ if(condition)
+  {
+
+   }
+
+let n=12;
+if(n>0)
+{
+ console.log("number is positive");
+}
+
+
+
+2. Simple if-else 
+ if(condition)
+  {
+
+   }
+else{
+
+    }
+
+let n=12;
+if(n>0)
+{
+ console.log("number is positive");
+}
+else{
+ console.log("number is negative");
+ }
+
+
+3. multiple/ladder if-else
+ if(condition)
+  {
+
+   }
+else if(condition){
+
+    }
+else{
+
+    }
+
+
+let n=12;
+if(n>0)
+{
+ console.log("number is positive");
+}
+else if(n<0){
+ console.log("number is negative");
+ }
+else{
+ console.log("number is zero");
+ }
+
+
+4. nested if-else
+ if(condition)
+  {
+
+ if(condition){
+
+    }
+  }
+else{
+
+    }
+
+
+let n=12;
+if(n>0)
+{
+ console.log("number is positive");
+ if(n%2==0)
+  {
+    console.log("number is even");
+  }
+ else{
+    console.log("number is odd");
+  }
+}
+else if(n<0){
+ console.log("number is negative");
+ }
+else{
+ console.log("number is zero");
+ }
+
+
+---------simplified code ------
+let n=12;
+if(n>0 && n%2==0)
+{
+ console.log("number is even positive");
+ }
+else if(n>0 && n%2!=0){
+ console.log("number is odd positive");
+ }
+else if(n<0){
+ console.log("number is negative");
+ }
+else{
+ console.log("number is zero");
+ }
+
+** program to print day of the week **
+let n=3;
+if(n==1)
+{
+console.log("Sunday");
+}
+else if(n==2)
+{
+console.log("Monday");
+}
+else if(n==3)
+{
+console.log("Tuesday");
+}
+else if(n==4)
+{
+console.log("Wednesday");
+}
+else if(n==5)
+{
+console.log("Thursday");
+}
+else if(n==6)
+{
+console.log("Friday");
+}
+else if(n==7)
+{
+console.log("Saturday");
+}
+else{
+console.log("Invalid");
+}
+
+** Switch case **
+=================Using Switch===============
+
+let n=3;
+switch(n)
+{
+ case 1:console.log("Sunday");
+        break;
+ case 2:console.log("Monday");
+        break;
+ case 3:console.log("Tuesday");
+        break;
+ case 4:console.log("Wednesday");
+        break;
+ case 5:console.log("Thursday");
+        break;
+ case 6:console.log("Friday");
+        break;
+ case 7:console.log("Saturday");
+        break;
+ default: console.log("Invalid");
+ 
+}
+
+yadi break nahi dete to usko fall through condition kahte hai
+
+
+** ternary operator **
+let var = condition expression ? true/if expression : false/else expression
+
+
+let age=18;
+if(age>18)?console.log("You can vote"); : console.log("You can'tf");
+
+
+
+======================================================================================================================
+
+
+
+Control Flow --- Iterative statement
+
+required: 
+1. Loop variable (holds the value of loop)
+2. Loop condition expression (checks the condition of loop)
+3. Loop body (executes the code block of loop)
+4. Loop updation (Updates the loop variable)
+5. Loop termination (stops the loop)
+     a) due to condition failure (natural termination)
+     b) due to break/return keyword (forced termination)
+
+
+Types of loop 
+1. Entry control (for, while)
+2. Exit control (do while)
+
+
+1. while loop 
+
+ =====syntax===
+loopvar=0;
+while(condition)
+{
+  //body
+  //update exp
+}
+
+
+
+example- 
+let n=10;
+let lv=1;
+while(lv<=n)
+{
+  console.log(lv);
+  lv++;
+}
+
+
+2.do while loop 
+
+ =====syntax===
+loopvar=0;
+do
+{
+  //body
+  //update exp
+}while(condition);
+
+
+
+example- 
+let n=10;
+let lv=1;
+do
+{
+  console.log(lv);
+  lv++;
+}while(lv<=n);
+
+
+3. for loop 
+
+syntax-
+
+for(initialize ; condition ; update expression)
+{
+  //body
+}
+
+
+example-
+let n=10;
+for(let i=1; i<=n; i++)
+{
+ console.log(i);
+}
+
+
+while : when we don't know the number of iterations
+for   : when we know the number of iterations
+do while : when we want to execute loop atleast once
+
+
+=======================================================================================================================
+
+Functions: block of code to reuse the code and reduce the redundancy
+
+** function based on parameters **
+
+//non parametrized function
+creation:
+
+function funcName()
+{
+  //body of function
+}
+
+
+calling: 
+
+funcName();
+
+
+
+//parameterized function
+
+function sum(a,b)  (parameter)
+{
+ console.log(a+b);
+}
+
+sum(10,20); ====>(Argument)
+sum(1,5);
+
+-------------------------------------------
+** return function **
+
+function sum(a,b)  (parameter)
+{
+ return a+b;
+}
+
+let x = sum(10,20); ====(Argument)
+console.log(x);
+
+
+return rules: 
+1. single return statement 
+2. return must be last statement
+3. will return single value
+
+
+-------------------------------------------------
+** function based on use of variables **
+
+//pure vs impure function
+
+impure - the function which use external or global data in its body without sending as parameter or 
+         we can say direct use
+pure - if usko as a parameter bhej denge tab usko pure bna skte h
+
+let count =10;
+
+//impure
+function dets()
+{
+   count++;
+   console.log(count);
+}
+dets();
+
+//pure
+function dets(c)
+{
+   c++;
+   console.log(c);
+}
+dets(count);
+
+
+------------------------------------------------
+
+** default parameters **
+
+The parameter which can be common to everyone but sometime it change
+
+function details(name ,age ,batchcode ="MERN13")
+{
+  console.log("Name is " + name);
+  console.log("Age is " + age);
+  console.log("Batchcode is " + batchcode);
+}
+
+details("Dheeraj",23);
+details("Prakash",22,"B21");
+
+Rules: 
+1. Default parameters should be at end
+2. There should be single default parameter in a fn
+
+-------------------------------------------------------
+
+** rest operator **
+
+(rest operator ===> ...)
+variable length parameters/argument wala function
+
+function hobbies(name , ...h)
+{
+  console.log("Name is " + name);
+  console.log("Hobbies are " + h);
+}
+
+details("Dheeraj",23,2,2,4,3,4);
+details("Prakash",22,32,32,22,3,4);
+
+Rules: 
+1. rest operator should be at the end
+2. only one rest operator is allowed in a function
+
+
+-----------------------------------------------------
+
+** Normal function ** =====> extra data store krke rakhta hai (this,globalThis)
+
+function sum(a,b)
+{
+ return a+b;
+}
+
+let res = sum(3,8);
+console.log(res);
+
+
+** Anonymous function **
+
+let sum = function (a,b)
+{
+ return a+b;
+}
+
+console,log(sum(1,2));
+
+
+** Arrow function **
+
+1. Single statement wala arrow fn
+
+let funvar = (a,b)=> a+b;
+let res = funvar(4,9);
+console.log(res);
+
+2. Multiple line arrow dunction
+
+let funvar = (a,b)=>
+{
+  let sum = a+b;
+  return sum;
+}
+
+let res = funvar(4,9);
+console.log(res);
+
+
+===========================================================================================================================
+Hoisting : use of variables/functions before declarations 
+
+Note: on the top all declarations and initializations are done, then the code is executed line by line after compilation
+
+1. functions
+ 
+  a)normal function : fully hoisted (fn with keyword "function")
+  
+ex- 
+
+sayHi();
+
+function sayHi()
+{
+ console.log("Hello");
+}
+  
+
+  b)fat arrow function : just usko as a variable me store krte hai to kisse kiye h uske according hoisting hota hai
+
+  ex-
+   console.log(a);
+   var a = ()=>{
+       console.log("Hello");
+    }
+  o/p: undefined
+
+    (Note: Yadi let ya const se krte to error deta hai)
+
+
+2. Variables 
+ 
+ a) var - partially hoisted 
+    
+  ex- console.log(i);
+      var i = 12;
+
+  o/p undefined
+
+  (Note : compiler phle var ko top par declare kar deta hai phr usme undefined initialize kr deta hai, 
+          jab user usko access krne ki kosis krta h to usko undefined milta hai 
+          ===> that's why partially hoisted)
+
+
+
+ b) let and const ===> not hoisted (isko TDZ=>Temporal Dead Zone kahte hai)
+
+    ex- console.log(i);
+        let i = 12;
+     
+      o/p - error : cannot access i before initialization 
+       
+          (Note: compiler declare to kr deta hai lekin undefined se initialize nahi krta hai,
+                 isiliye hm hoisting nahi kr pate aur jab compiler variable ko declare krne ke bad undefined 
+                 se initialize nahi kr pata hai aur wah Temporal Dead Zone[TDZ] me fas jata hai)
+
+
+=======================================================================================================================
+Primitive/non-reference/immutable
+
+Number=84;
+String = ""
+Boolean = false
+Undefined = undefined 
+Null = null 
+Symbol = symbol
+
+
+Ex- 
+let a = 45;
+let b=a;
+console.log("a: ",a); //45
+console.log("b: ",b); //45
+a=34;
+console.log("a: ",a); //34
+console.log("b: ",b); //45
+
+Note: Data copy hota hai aur ye immutable hota h
+
+
+
+
+Non-primitive/Reference/mutable data type : 
+1. Array : []  -> heterogenous type ka data hota hai jisme sabhi prakar ke data store kr skte h in a [] (square) bracket.  
+                  wo data object ya khud array v ho skta hai
+
+ ex- 
+let arr = [1,23,"Dheeraj", {name:Dheeraj}, [2,5,9]]; 
+console.log(arr);
+console.log(arr[2]); //element access
+
+2. Object : {}  -> key value pair me store hota aur separated by comma, in {} (curly) bracket.
+
+ex-
+let obj = {
+ name:Dheeraj,
+ age:45,
+ isMarried:false
+} 
+
+console.log(obj);
+console.log(obj.age);//particular value access
+
+--------------------------------------------------
+** mutable concept **
+
+let Dheeraj = {
+ name : Dheeraj,
+ age : 45,
+}
+
+let Prakash = Dheeraj;
+
+console.log(Dheeraj); // {name:Dheeraj,age:45}
+console.log(Prakash); //{name:Dheeraj,age:45}
+
+Prakash.name= Prakash;
+console.log(Dheeraj); //{name:Prakash,age:45}
+console.log(Prakash); //{name:Prakash,age:45}
+
+Note: not able to copy the actual data but it points same object, so jab ham kisi me change krte hai wo dono me 
+reflect hota hai
+
+
+================================================================================================================
+
+Array:
+
+creation:
+1. let arr = []
+2. let arr = new Array()
+
+let arr = [12,13,32,21,32,34,35,51,98]
+
+console.log(arr.length);//array length dega yani total items
+
+Reading:
+  Front:
+   console.log(arr[3]); // 21
+  Back: 
+   console.log(arr.at(-1)); //98 ->piche se dega element "at" method use krke
+
+Updating:
+ arr[2]=333;
+ console.log(arr); // [12,13,333,21,32,34,35,51,98]
+
+Deleting:
+ 1. delete arr[1]; // delete kr dega but space reserve krega bad me jab access krenge undefined dega
+ 
+
+Traversing array:
+
+1. For loop
+ for(int i=0;i<arr.length;i++)
+  {
+     console.log(arr[i]);
+  }
+2. For-of loop
+ for(const element of arr)
+  {
+    console.log(element);
+  }
+
+---------callback function-----
+
+waisa function jo kisi function ko call krega
+- anonymous fn
+
+1. forEach
+
+arr.forEach(function(element,index){
+ arr[index]=element*2; //aise manipulate v kr skte hai
+ console,log(index," --- ",element);
+});
+   
+          or
+
+arr.forEach((element,index)=>{
+console,log(index," --- ",element);
+})
+
+
+Note: forEach function kuch return nahi krta hai
+
+==========================================================
+
+Array Methods:
+
+1. Add
+ a) push
+ b) unshift
+
+ push: to add element in array at last.
+ unshift: to add an element at start.
+
+ Note: push and unshift element add krne ke bad wo uska length return krta hai
+
+ ex- 
+ let arr = [10,12,15];
+ arr.push(32); // o.p [10,12,15,20]
+ let x = arr.unshift(43); // o.p [43,10,12,15,20]
+ console.log(x); //5
+
+
+2. Delete/Remove
+ 
+ a) pop
+ b) shift
+ c) splice
+ d) slice
+
+ 1. pop: to remove element in array from last.
+ 
+ 2. shift: to remove an element from start.
+
+ 3. splice : ye ek index mangta h aur waha se kitne element delete krne hai 
+    ->splice(2,2); ===> index 2 se remove krega aur 2 element
+    ->ye mutable method hai isse array element delete hote hai
+ 
+ 4. slice : ye array ko slice krne me kam aata hai. isse array me koi change nahi hota 
+    
+
+ Note: pop and shift element delete krne ke bad wo usi element ko return krta hai
+
+ ex- 
+ let arr = [10,12,15];
+ arr.pop(); // o.p [10,12]
+ let x = arr.unshift(); // o.p [12]
+ console.log(x); //10
+
+
+
+
+
+
+
+
+
+========================================================================================================
+forEach vs Map vs filter
+
+1. forEach :
+
+let arr = [12,34,56,78,90,98,76,54,32,10];
+let x = arr.forEach((elem,ind)=>{
+ arr[ind] = elem + 10;
+});
+console.log(x); //undefined-> ye kuchh return nahi krega 
+console.log(arr); //[22,44,66,88,100,108,86,64,43,20];
+
+Note : isme ham usi array me update kr rhe. Yadi ham alag array krna chahte h bina change kiye then hame new array create krke usme element
+       dalna padega.
+
+
+Ex-
+let arr = [12,34,56,78,90,98,76,54,32,10];
+let newarr = []
+arr.forEach((elem,ind)=>{
+  newarr.push(elem + 10);
+});
+
+console.log(arr); // [12,34,56,78,90,98,76,54,32,10]; 
+console.log(newarr); //[22,44,66,88,100,108,86,64,43,20];
+
+
+
+Map : 
+
+let arr = [12,34,56,78,90,98,76,54,32,10];
+let newarr = arr.Map((elem,ind)=>{
+  return elem + 10;
+});
+
+console.log(arr); // [12,34,56,78,90,98,76,54,32,10]; 
+console.log(newarr); //[22,44,66,88,100,108,86,64,43,20];
+
+let newarr = arr.filter((elem,ind)=> elem>50);
+or 
+
+let newarr = arr.filter((elem,ind)=> elem>50);
+
+Filter:
+
+let arr = [12,34,56,78,90,98,76,54,32,10];
+let newarr = arr.filter((elem,ind)=>{
+  return elem > 50;
+});
+
+
+ or 
+
+let newarr = arr.filter((elem,ind)=> elem>50);
+
+
+===========================================================================================
+findIndex -> findIndex will return the first index of first element that satisfies the condition
+
+find -> find will return the first element that satisfies the condition 
+
+
+=====================================================================================================================
+
+Object : hold some properties in key value pair
+
+creating an object:
+ 1. let obj1 = new Object(); //empty object bna kar de dega
+ 
+ 2. let obj2 = {}; // empty object isse v bna dega
+ 
+ 3. let obj = {
+     name: "Dheeraj",
+     age:21,
+     city: "Bhopal", 
+ }
+
+Reading object properties:
+
+ 1. using . 
+
+    console,log(obj.name); // Dheeraj
+    console.log(obj.age); // 21
+    console.log(obj.prop); // undefined
+
+
+ 2. using []
+
+ console.log(obj["name"]);
+ console.log(obj["city"]);
+ let prop = "age";
+ console.log(obj.prop); // undefined
+ console.log(obj[prop]); // 21
+
+Updating object properties
+
+obj.name = "Dhiru"; 
+console.log(obj);
+
+Adding new properties in object
+ 
+obj.friend = "prakash";
+console.log(obj);
+
+
+Iterating object:
+
+ for(const key in obj)
+ {
+   console.log(key , "->", obj[key]);
+ }
+
+==============================================================================================
+
+JSON (javascript object notation)
+-> ye ek data store krne ka format hota hai jo array of objects ke form me hota hai
+-> ye data ko exchange krne me use hota hai over the social media and internet 
+-> xml me phle hota tha jo 
+
+let profiles = [
+  {
+     name: "Dheeraj",
+     age:21,
+     city: "Bhopal", 
+  },
+
+ {
+     name: "Dheeraj",
+     age:21,
+     city: "Bhopal", 
+ },
+
+ {
+     name: "Dheeraj",
+     age:21,
+     city: "Bhopal", 
+ }
+];
+
+  console.log(profiles);
+
+  console.log(typeof profiles);
+
+
+conveting JS object to JSON string:
+
+  let strprofiles = JSON.stringify();
+  console.log(typeof strprofiles);
+
+
+conveting JSON string to JS object:
+
+  let objprofiles = JSON.parse();
+  console.log(typeof objprofiles);
+
+
+========================================================================================
+
+ -----copying array and objects-----------
+
+1. array
+
+ let arr = [10,20,30];
+ let newarr = arr;
+ console.log(arr); // [40,20,30]
+ newarr[0]=40;
+ console.log(arr); // [40,20,30]
+ console.log(newarr); // [40,20,30]
+
+ problem: dono me change because of reference
+
+ solution:
+ 
+ a) using Object.assign
+    
+    let newarr = Object.assign([],arr);
+    console.log(arr); // [40,20,30]
+    newarr[0]=40;
+    console.log(arr); // [10,20,30]
+    console.log(newarr); // [40,20,30]
+    
+ b} using spread operator
+    
+    let newarr = [...arr];
+    console.log(arr); // [40,20,30]
+    newarr[0]=40;
+    console.log(arr); // [10,20,30]
+    console.log(newarr); // [40,20,30]
+
+2. Object
+
+let obj = {
+    name: "Dheeraj",
+    age:21,
+   };
+ let newobj = obj;
+ console.log(obj); // {name:Dheeraj, age:21}
+ newobj.name="prakash";
+ console.log(obj); // {name:prakash, age:21}
+ console.log(newobj); // {name:prakash, age:21}
+ problem: dono me change because of reference
+
+ solution:
+ 
+ a) using Object.assign
+    
+    let newobj = Object.assign({},obj);
+    console.log(obj); // {name:Dheeraj, age:21}
+    newobj.name="prakash";
+    console.log(obj); // {name:Dheeraj, age:21}
+    console.log(newonj); // {name:prakash, age:21}
+    
+ b} using spread operator
+    
+    console.log(obj); // {name:Dheeraj, age:21}
+    newobj.name="prakash";
+    console.log(obj); // {name:Dheeraj, age:21}
+    console.log(newobj); // {name:prakash, age:21}
+
+
+===================================================================================
+
+Destructuring Of Array:
+
+let arr=[10,20,32,45,21];
+let a=arr[0];
+let b=arr[1];
+let c=arr[2];
+let d=arr[3];
+let e=arr[4];
+
+console.log(a,b,c,d,e); //[10,20,32,45,21];
+
+     or
+
+let [a,b,c,d,e] = arr;
+console.log(a,b,c,d,e); //[10,20,32,45,21];
+
+-> yadi kisi element ko skip krna hai to , se separate only
+
+let [a, , , ,e] = arr;
+conole.log(a,e); //[10,21];
+
+----------------------------------------------
+
+Destrucring of object 
+
+let profile = {
+  name: "Dheeraj",
+  age:21,
+  hobbies:["reading","cricket"]
+ };
+
+const name = profile.name;
+const age = profile.age;
+const hobbies = profile.hobbies;
+
+console.log(name,age,hobbies); //{Dheeraj,21,["reading","cricket"]}
+ 
+     or
+
+const {age,name,hobbies} = profile;
+console.log(name,age,hobbies); //{Dheeraj,21,["reading","cricket"]}
+
+ 
+===============================================================================
+
+String:
+
+let greet = "hello world";
+console.log(greet);
+console.log(greet.length);
+console.log(greet.)
+
+
+
+
+
+===================================================================================
+
+Template string/literals:
+
+let name = "Dheeraj";
+let age = 21;
+consolog.log("My name is " + name + " and my age is " +age); // "My name is Dheeraj and my age is 21"
+
+->using template string
+console.log(`My name is ${name} and my age is ${age}`); // "My name is Dheeraj and my age is 21"
+
+
+=======================================================================================================
+
+Asynchronous function:
+ line by line code execute- sync fn
+kuch async behaviour jo bad me run hota hai
+
+console.log(1);
+
+setTimeout(()=>{
+ console.log(2);
+},2000);
+
+console.log(3);
+
+Async fn: 1.setTimeout
+          2.setInterval
+          2.DOM
+          2.fetch
+          2.promises
+
+==========================================================================================================
+let counter = 1;
+let x = setInterval(()=>{
+   if(counter < 11)
+   {
+     console.log(counter);
+     counter++;
+    }
+   else
+   {
+     clearInterval(x);
+   }
+},1000);
+
+
+Note: setInterval -> kitni kitni der me chalte rhega
+      setTimeout -> kitne der bad 
+
+============================================================================================
+
+let time = new Date().toLocaleTimeString();
+
+let stop = setInterval(()=>{
+  console.log(time);
+  time = new Date().toLocaleTimeString();
+},1000)
+
+
+======================================================================================================
+
+DOM : Document Object Model
+
+document: ek inbuilt object hai JS me to access html/css data.
+selectors: used to select the specific html tags from the file
+           1. class selectors
+           2. id selectors 
+           3. attribute selectors
+           4. tag selectors
+
+event listeners : all the events performed by mouse/cusor/keyboard
+                  listners listens the event and take the desired actions according to the dveloper. 
+ example:->
+           documetn.getElementsByClassName();
+           documetn.getElementById();
+           document.getElementByTagName('div');
+
+  const subheading= document.querySelector("#sub");
+  // const div = document.querySelectorAll("#sub");
+
+  // Reading Elements data
+console.log(subheading.textContent); -> to get the value (tags not included)
+console.log(subhheading.innerHTML); -> to get the value (tags included)
+console.log(subheading.innerText); -> to get the value (tags not included)
+
+  const h1=document.querySelector("h1");
+   h1.innerHTML = "hello world" // this will replace the content of h1
+   h1.innerHTML += "hello world" // this will append the content of h1.
+
+   const h1= document.querySelector("h1");
+   const button=document.querySelector("button");
+
+   button.addEventListener("click",()=>{
+     h1.innerHTML = "hello world";
+     h1.style.color="red";
+     h1.style.fontSize="30px";
+   });
+
+
+
+=========================================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
